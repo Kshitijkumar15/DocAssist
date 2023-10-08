@@ -5,70 +5,122 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="10dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.069">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbarofdoctor"
+            android:id="@+id/my_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@color/white">
-<!--            <TextView-->
-<!--                android:id="@+id/title"-->
-<!--                android:layout_width="370dp"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:paddingLeft="10dp"-->
-<!--                android:paddingTop="10dp"-->
-<!--                android:paddingRight="10dp"-->
-<!--                android:text="Doctor App"-->
-<!--                android:textAllCaps="true"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:textSize="22sp"-->
-<!--                android:textStyle="bold" />-->
+            android:layout_height="60dp"
+            android:layout_marginBottom="7dp"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-            <ImageView
-                android:id="@+id/menupopupbutton"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="0"
-                android:layout_marginLeft="380dp"
-                android:outlineSpotShadowColor="@color/white"
-                android:src="@drawable/baseline_more_vert_24">
+        <ImageView
+            android:id="@+id/menupopupbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:background="#6750A4"
+            android:outlineSpotShadowColor="@color/black"
+            android:src="@drawable/baseline_more_vert_24">
 
-            </ImageView>
-
-        </androidx.appcompat.widget.Toolbar>
-
+        </ImageView>
 
     </LinearLayout>
 
+    <ImageView
+        android:id="@+id/appointimg"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/booking"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+        app:layout_constraintHorizontal_bias="0.423"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.195">
+
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/appointimg2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/inpatient"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+        app:layout_constraintHorizontal_bias="0.576"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appointimg"
+        app:layout_constraintVertical_bias="0.054">
+
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/appointimg3"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/medical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+        app:layout_constraintHorizontal_bias="0.576"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appointimg"
+        app:layout_constraintVertical_bias="0.207">
+
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/appointimg4"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/medicalhistory"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+        app:layout_constraintHorizontal_bias="0.576"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appointimg"
+        app:layout_constraintVertical_bias="0.369">
+
+    </ImageView>
+
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="70dp"
-        android:layout_marginBottom="150dp"
+        android:layout_width="279dp"
+        android:layout_height="387dp"
+        android:layout_marginBottom="265dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/appointimg"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+        app:layout_constraintVertical_bias="1.0">
+
 
         <TextView
             android:id="@+id/Appointments"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="0dp"
             android:layout_marginBottom="20dp"
             android:contextClickable="true"
             android:text="Appointments"
@@ -76,11 +128,12 @@
             android:textSize="24dp"
             android:textStyle="bold" />
 
+
         <TextView
             android:id="@+id/inpatient"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="30dp"
             android:layout_marginBottom="20dp"
             android:contextClickable="true"
             android:text="Inpatient care"
@@ -92,7 +145,7 @@
             android:id="@+id/outpatient"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="30dp"
             android:layout_marginBottom="20dp"
             android:contextClickable="true"
             android:text="Outpatient care"
@@ -104,7 +157,7 @@
             android:id="@+id/patienthandover"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="35dp"
             android:layout_marginBottom="20dp"
             android:contextClickable="true"
             android:text="Patient handover"
@@ -112,5 +165,28 @@
             android:textSize="24dp"
             android:textStyle="bold" />
     </LinearLayout>
+
+
+    <!--        <TextView-->
+<!--            android:id="@+id/menupopupbutton"-->
+<!--            android:layout_width="100dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:background="@drawable/button_design"-->
+<!--            android:elegantTextHeight="true"-->
+<!--            android:text="Log out"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.5"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/linearLayout"-->
+<!--            app:layout_constraintVertical_bias="0.5">-->
+
+<!--        </TextView>-->
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
