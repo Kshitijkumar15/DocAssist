@@ -34,7 +34,7 @@ public class Dashboard extends AppCompatActivity {
         AlertDialog.Builder builder;
         private FirebaseAuth firebaseAuth;
         private ImageView mmenupopupbutton;
-        private TextView mAppointments,minpatient,moutpatient,mpatienthandover,mlogout;
+        private TextView mAppointments,minpatient,moutpatient,mpatienthandover;
         RecyclerView mrecylerview;
 
         FirebaseUser firebaseUser;
@@ -49,25 +49,39 @@ public class Dashboard extends AppCompatActivity {
         mpatienthandover =findViewById(R.id.patienthandover);
         firebaseAuth = FirebaseAuth.getInstance();
         mmenupopupbutton=findViewById(R.id.menupopupbutton);
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
 
-            setContentView(R.layout.activity_dashboard);
-            Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-            setSupportActionBar(myToolbar);
-
-        mAppointments.setOnClickListener(new View.OnClickListener() {
+       mAppointments.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), Appointments.class);
-                v.getContext().startActivity( intent);
-
+                Intent intent = new Intent(Dashboard.this, Appointments.class);
+                startActivity(intent);
             }
         });
 
+        minpatient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Dashboard.this, Inpatient.class));
+            }
+        });
+
+        moutpatient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashboard.this, OutPatient.class);
+                startActivity(intent);
+            }
+        });
+        mpatienthandover.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashboard.this, PatientHandover.class);
+                startActivity(intent);
+            }
+        });
     }
-
-
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -86,27 +100,22 @@ public class Dashboard extends AppCompatActivity {
         startActivity(new Intent(Dashboard.this, MainActivity.class));
     }
 
-    //    public boolean onOptionsItemSelected(@NonNull menu item) {
-//            firebaseAuth.signOut();
-//            finish();
-//            startActivity(new Intent(Dashboard.this, MainActivity.class));
-//            return false;
-//        }
     @Override
     public void onBackPressed() {
-        builder.setTitle("Quit");
-        builder.setMessage("Do you really want to quit?").setCancelable(false).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(Dashboard.this);
+        alertDialog.setMessage("Are you sure ?");
+        alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
+            public void onClick(DialogInterface dialog, int which) {
                 finishAffinity();
             }
-        }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+        });
+        alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.cancel();
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
             }
         });
-        AlertDialog alert = builder.create();
-        alert.show();
+        alertDialog.show();
     }
 }

@@ -27,13 +27,29 @@
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             android:exported="false" />
         <activity
+            android:name=".Appointments"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:exported="false" />
+        <activity
             android:name=".forgotpassword"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             android:exported="false" />
         <activity
             android:name=".signup"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
-            android:exported="false" >
+            android:exported="false" />
+        <activity
+            android:name=".OutPatient"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:exported="false" />
+        <activity
+            android:name=".PatientHandover"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:exported="false" />
+            <activity
+                android:name=".Inpatient"
+                android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+                android:exported="false" >
 
         </activity>
     </application>
